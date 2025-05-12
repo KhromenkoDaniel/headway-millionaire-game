@@ -9,13 +9,12 @@
     "start": "next start",
     "lint": "next lint",
     "lint-staged": "lint-staged",
-    "test": "jest --watchAll --passWithNoTests"
+    "test": "jest --passWithNoTests"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
       "npm run lint -- --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "dependencies": {
