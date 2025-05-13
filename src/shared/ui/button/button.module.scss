@@ -1,0 +1,32 @@
+@use "@/shared/_mixins.scss" as mix;
+@use "@shared/_breakpoints" as bp;
+
+.button {
+  border: none;
+  color: var(--white-100);
+  background-color: var(--orange-100);
+  border-radius: var(--radius);
+  cursor: pointer;
+
+  @include mix.text-button;
+  
+  height: 3rem;
+  width: 100%;
+  min-width: 18rem;
+  transition: background-color 0.3s ease-in-out;
+  
+  @media (bp.$screen-medium) {
+    height: 4rem;
+    min-width: 18.5rem;
+  }
+
+  &:active {
+    background-color: var(--orange-120);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: var(--orange-80);
+    }
+  }
+}

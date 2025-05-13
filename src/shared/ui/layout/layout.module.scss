@@ -1,0 +1,21 @@
+@use "@shared/_breakpoints.scss" as bp;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+
+  .main {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    align-content: center;
+    justify-content: center;
+    flex: 0 0 100%;
+    @media (bp.$screen-medium) {
+      grid-template-columns: 1fr 23.5rem;
+    }
+  }
+}
