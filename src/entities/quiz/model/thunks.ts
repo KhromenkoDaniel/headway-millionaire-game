@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Answer } from '@/shared/types';
 import { RootState } from '@/app/store';
-import { addToSum } from './actions';
+import { setSum } from './actions';
 
 export const verifyAnswerAsync = createAsyncThunk(
   'quiz/verifyAnswer',
@@ -17,7 +17,7 @@ export const verifyAnswerAsync = createAsyncThunk(
     }
 
     if (currentQuestion?.sum) {
-      dispatch(addToSum(currentQuestion.sum));
+      dispatch(setSum(currentQuestion.sum));
     }
 
     const currentIndex = state.quiz.questions.findIndex(q => q.id === currentQuestion?.id);
