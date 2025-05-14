@@ -39,5 +39,5 @@ const quizSlice = createSlice({
 });
 
 export const { restart } = quizSlice.actions;
-export { addToSum, fail, win, nextQuestion }; // ✅ експорт з actions
+export { addToSum, fail, win, nextQuestion };
 export default quizSlice.reducer;
