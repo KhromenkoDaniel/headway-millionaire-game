@@ -100,9 +100,6 @@ The project follows the FSD (Feature-Sliced Design) architecture, which organize
       { "answer": "Rome", "id": 4, "correct": false }
     ],
     "sum": 500
-  },
-  {
-    ...
   }
 ]
 ```
