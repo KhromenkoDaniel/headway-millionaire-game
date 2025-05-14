@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import quizConfig from '@/shared/config/quiz-config.json';
 import { QuizState } from './types';
-import { addToSum, fail, win, nextQuestion } from './actions';
+import { fail, win, nextQuestion, setSum } from './actions';
 
 const initialState: QuizState = {
   questions: quizConfig,
@@ -22,8 +22,8 @@ const quizSlice = createSlice({
   },
   extraReducers: builder => {
     builder
-      .addCase(addToSum, (state, action) => {
-        state.sum += action.payload;
+      .addCase(setSum, (state, action) => {
+        state.sum = action.payload;
       })
       .addCase(fail, state => {
         state.status = 'fail';
@@ -39,5 +39,5 @@ const quizSlice = createSlice({
 });
 
 export const { restart } = quizSlice.actions;
-export { addToSum, fail, win, nextQuestion }; // ✅ експорт з actions
+export { setSum, fail, win, nextQuestion };
 export default quizSlice.reducer;
