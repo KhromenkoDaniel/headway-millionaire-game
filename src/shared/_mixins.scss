@@ -1,0 +1,103 @@
+@use "./breakpoints" as bp;
+
+@mixin text-headline {
+  font-weight: 600;
+  
+  @include respond-to(bp.$screen-medium-max) {
+    font-size: 2rem;
+    line-height: 2.3125rem;
+  }
+  
+  @include respond-to(bp.$screen-medium) {
+    font-size: 3.5rem;
+    line-height: 4.0625rem;
+  }
+}
+
+@mixin text-button {
+  font-weight: 600;
+  text-align: center;
+  
+  @include respond-to(bp.$screen-medium-max) {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  
+  @include respond-to(bp.$screen-medium) {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+}
+
+@mixin text-question {
+  font-weight: 600;
+  
+  @include respond-to(bp.$screen-medium-max) {
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
+  }
+  
+  @include respond-to(bp.$screen-medium) {
+    font-size: 2rem;
+    line-height: 2.3125rem;
+  }
+}
+
+@mixin text-option {
+  font-weight: 400;
+  
+  @include respond-to(bp.$screen-medium-max) {
+    font-size: 0.875rem;
+    line-height: 1rem;
+  }
+  
+  @include respond-to(bp.$screen-medium) {
+    font-size: 1.25rem;
+    line-height: 1.4375rem;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == bp.$screen-large {
+    @media (min-width: #{bp.$screen-large}px) {
+      @content;
+    }
+  } @else if $breakpoint == bp.$screen-medium {
+    @media (min-width: #{bp.$screen-medium}px) and (max-width: #{bp.$screen-large - 1}px) {
+      @content;
+    }
+  } @else if $breakpoint == bp.$screen-small {
+    @media (min-width: #{bp.$screen-small}px) and (max-width: #{bp.$screen-medium - 1}px) {
+      @content;
+    }
+  } @else if $breakpoint == bp.$screen-medium-max {
+    @media (max-width: #{bp.$screen-medium-max}px) {
+      @content;
+    }
+  }
+}
+
+@mixin hover-active-state {
+  .hexagon > path {
+    stroke: var(--orange-120);
+  }
+  
+  .optionItem {
+    color: var(--orange-100);
+  }
+  
+  & > .hexagonContainer {
+    &::before,
+    &::after {
+      background: var(--orange-120);
+    }
+  }
+}
+
+@mixin disable-selection {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Safari */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently supported by Chrome and Opera */
+}

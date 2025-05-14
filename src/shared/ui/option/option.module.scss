@@ -1,0 +1,254 @@
+@use "@/shared/_mixins.scss" as mix;
+@use "@/shared/_breakpoints.scss" as bp;
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  .optionItem {
+    z-index: 2;
+  }
+  
+  & .hexagonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 32px;
+    position: relative;
+    
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 4.3125rem;
+      height: 1px;
+      background: var(--black-40);
+      top: 50%;
+      
+      transition: background 0.3s linear;
+    }
+    
+    &::before {
+      left: 0;
+      transform: translate(-100%, -50%);
+    }
+    
+    &::after {
+      right: 0;
+      transform: translate(100%, -50%);
+    }
+    
+    @media (max-width: #{bp.$screen-small}px) {
+      padding-left: 24px;
+    }
+  }
+  
+  & .hexagon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    
+    > path {
+      transition:
+              stroke 0.3s linear,
+              fill 0.3s linear;
+      
+      fill: var(--white-100);
+      stroke: var(--black-40);
+    }
+  }
+  
+  &[data-disabled="true"] {
+    pointer-events: none;
+    cursor: not-allowed;
+    .hexagon > path {
+      stroke: var(--black-40);
+    }
+    
+    & > .hexagonContainer {
+      &::before,
+      &::after {
+        background: var(--black-40);
+      }
+    }
+    
+    .optionItem {
+      color: var(--black-40);
+    }
+  }
+  
+  &:focus-within {
+    @include mix.hover-active-state;
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    &:not([data-disabled="true"]):not([data-correct]):hover {
+      @include mix.hover-active-state;
+    }
+  }
+  
+  &[data-active="true"]:not([data-correct]) {
+    @include mix.hover-active-state;
+  }
+  
+  &[data-correct="true"] {
+    .hexagon > path {
+      stroke: var(--green-100);
+      fill: var(--green-5);
+    }
+    
+    & > .hexagonContainer {
+      &::before,
+      &::after {
+        background: var(--green-100);
+      }
+    }
+    
+    .optionItem {
+      color: var(--green-100);
+    }
+  }
+  
+  &[data-correct="false"] {
+    .hexagon > path {
+      stroke: var(--red-100);
+      fill: var(--red-5);
+    }
+    
+    & > .hexagonContainer {
+      &::before,
+      &::after {
+        background: var(--red-100);
+      }
+    }
+    
+    .optionItem {
+      color: var(--red-100);
+    }
+  }
+  
+  &:not([data-disabled="true"]):active {
+    .hexagon > path {
+      stroke: var(--orange-100);
+      fill: var(--orange-5);
+    }
+    
+    & > .hexagonContainer {
+      &::before,
+      &::after {
+        background: var(--orange-100);
+      }
+    }
+  }
+  
+  &.sm {
+    width: 100%;
+    height: 2.5rem;
+    
+    & > .hexagonContainer {
+      height: 2.5rem;
+      width: 15rem;
+      
+      & > .hexagon {
+        width: 15rem;
+        max-width: 15rem;
+      }
+      
+      &::before,
+      &::after {
+        width: calc(100vw - 15rem);
+      }
+    }
+    @media (min-width: #{bp.$screen-small}px) and (max-width: #{bp.$screen-medium-max}px) {
+      height: 3rem;
+      & > .hexagonContainer {
+        .hexagon {
+          height: 3rem;
+        }
+      }
+    }
+    
+    & .hexagonContainer::before {
+      left: 0;
+    }
+    
+    & .hexagonContainer::after {
+      right: 0;
+    }
+  }
+  
+  &.lg {
+    min-height: 3.5rem;
+    max-height: 4.5rem;
+    height: 100%;
+    
+    cursor: pointer;
+    
+    & > .hexagonContainer {
+      height: 100%;
+      width: 18rem;
+      
+      & > .hexagon {
+        width: 100%;
+      }
+      
+      &::before,
+      &::after {
+        width: calc((100vw - 18rem) / 2);
+      }
+    }
+    
+    @include mix.respond-to(bp.$screen-small){
+      height: 4rem;
+      width: 24.3125rem;
+      
+      & > .hexagonContainer {
+        width: calc(100% - 8.5rem);
+        .hexagon {
+          height: 4rem;
+          width: 100%;
+        }
+        
+        &::before,
+        &::after {
+          width: 4.25rem;
+        }
+      }
+    }
+    
+    @media (min-width: #{bp.$screen-medium}px) {
+      min-height: 4.5rem;
+      max-height: 5.5rem;
+      height: 100%;
+      & .hexagonContainer {
+        width: calc(100% - 2.125rem);
+        
+        & > .hexagon {
+          width: 100%;
+        }
+        
+        &::before,
+        &::after {
+          width: 1.0625rem;
+        }
+      }
+    }
+    
+    .optionItem {
+      word-break: break-word;
+      text-align: center;
+      overflow: hidden;
+      @include mix.text-option;
+    }
+  }
+}
+
+.letter {
+  color: var(--orange-100);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}

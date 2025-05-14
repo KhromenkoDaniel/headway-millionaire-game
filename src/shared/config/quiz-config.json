@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of France?",
+    "answers": [
+      { "answer": "Berlin", "id": 1, "correct": false },
+      { "answer": "Madrid", "id": 2, "correct": false },
+      { "answer": "Paris", "id": 3, "correct": true },
+      { "answer": "Rome", "id": 4, "correct": false }
+    ],
+    "sum": 500
+  },
+  {
+    "id": 2,
+    "question": "What is the largest planet in the Solar System?",
+    "answers": [
+      { "answer": "Earth", "id": 5, "correct": false },
+      { "answer": "Mars", "id": 6, "correct": false },
+      { "answer": "Jupiter", "id": 7, "correct": true },
+      { "answer": "Venus", "id": 8, "correct": false }
+    ],
+    "sum": 1000
+  },
+  {
+    "id": 3,
+    "question": "Who wrote 'Hamlet'?",
+    "answers": [
+      { "answer": "Charles Dickens", "id": 9, "correct": false },
+      { "answer": "William Shakespeare", "id": 10, "correct": true },
+      { "answer": "Leo Tolstoy", "id": 11, "correct": false },
+      { "answer": "Fyodor Dostoevsky", "id": 12, "correct": false }
+    ],
+    "sum": 2000
+  },
+  {
+    "id": 4,
+    "question": "What chemical element has the symbol 'O'?",
+    "answers": [
+      { "answer": "Oxygen", "id": 13, "correct": true },
+      { "answer": "Gold", "id": 14, "correct": false },
+      { "answer": "Silver", "id": 15, "correct": false },
+      { "answer": "Hydrogen", "id": 16, "correct": false }
+    ],
+    "sum": 4000
+  },
+  {
+    "id": 5,
+    "question": "Which country has won the most FIFA World Cups?",
+    "answers": [
+      { "answer": "Germany", "id": 17, "correct": false },
+      { "answer": "Brazil", "id": 18, "correct": true },
+      { "answer": "Italy", "id": 19, "correct": false },
+      { "answer": "Argentina", "id": 20, "correct": false }
+    ],
+    "sum": 8000
+  },
+  {
+    "id": 6,
+    "question": "What is the tallest mountain in the world?",
+    "answers": [
+      { "answer": "Kilimanjaro", "id": 21, "correct": false },
+      { "answer": "Everest", "id": 22, "correct": true },
+      { "answer": "K2", "id": 23, "correct": false },
+      { "answer": "Aconcagua", "id": 24, "correct": false }
+    ],
+    "sum": 16000
+  },
+  {
+    "id": 7,
+    "question": "What is the longest river in the world?",
+    "answers": [
+      { "answer": "Amazon", "id": 25, "correct": true },
+      { "answer": "Nile", "id": 26, "correct": false },
+      { "answer": "Yangtze", "id": 27, "correct": false },
+      { "answer": "Mississippi", "id": 28, "correct": false }
+    ],
+    "sum": 32000
+  },
+  {
+    "id": 8,
+    "question": "What is the largest animal on Earth?",
+    "answers": [
+      { "answer": "Elephant", "id": 29, "correct": false },
+      { "answer": "Blue Whale", "id": 30, "correct": true },
+      { "answer": "Polar Bear", "id": 31, "correct": false },
+      { "answer": "Giraffe", "id": 32, "correct": false }
+    ],
+    "sum": 64000
+  },
+  {
+    "id": 9,
+    "question": "Which country is the largest by area?",
+    "answers": [
+      { "answer": "Canada", "id": 33, "correct": false },
+      { "answer": "China", "id": 34, "correct": false },
+      { "answer": "Russia", "id": 35, "correct": true },
+      { "answer": "USA", "id": 36, "correct": false }
+    ],
+    "sum": 128000
+  },
+  {
+    "id": 10,
+    "question": "What is the most spoken language in the world?",
+    "answers": [
+      { "answer": "Spanish", "id": 37, "correct": false },
+      { "answer": "English", "id": 38, "correct": true },
+      { "answer": "Chinese", "id": 39, "correct": false },
+      { "answer": "Hindi", "id": 40, "correct": false }
+    ],
+    "sum": 250000
+  },
+  {
+    "id": 11,
+    "question": "What currency is used in Japan?",
+    "answers": [
+      { "answer": "Yuan", "id": 41, "correct": false },
+      { "answer": "Euro", "id": 42, "correct": false },
+      { "answer": "Yen", "id": 43, "correct": true },
+      { "answer": "Dollar", "id": 44, "correct": false }
+    ],
+    "sum": 500000
+  },
+  {
+    "id": 12,
+    "question": "Who is the author of 'War and Peace'?",
+    "answers": [
+      { "answer": "Fyodor Dostoevsky", "id": 45, "correct": false },
+      { "answer": "Leo Tolstoy", "id": 46, "correct": true },
+      { "answer": "Anton Chekhov", "id": 47, "correct": false },
+      { "answer": "Alexander Pushkin", "id": 48, "correct": false }
+    ],
+    "sum": 1000000
+  }
+]
