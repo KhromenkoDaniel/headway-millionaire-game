@@ -1,0 +1,96 @@
+@use "@shared/_mixins.scss" as mix;
+@use "@shared/_breakpoints.scss" as bp;
+
+.start-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white-100);
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  gap: 1.5rem;
+
+  @media (min-width: #{bp.$screen-medium}px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+    gap: 2rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    border-bottom: 100vh solid var(--orange-5);
+    border-left: 100vw solid transparent;
+  }
+
+  &-image {
+    height: 50%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    & > img {
+      object-fit: contain;
+    }
+
+    @media (min-width: #{bp.$screen-medium}px) {
+      width: 50%;
+      height: 22.9375rem;
+    }
+  }
+
+  &__content {
+    z-index: 2;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @media (min-width: #{bp.$screen-medium}px) {
+      width: 50%;
+      height: auto;
+      &-title {
+        text-align: left;
+      }
+    }
+    
+    &-title {
+      @include mix.text-headline;
+      text-align: center;
+    }
+
+    &-subtitle {
+      @include mix.text-question;
+      text-align: center;
+      opacity: 0.5;
+      color: var(--black-100);
+      margin-bottom: 0.5rem;
+    }
+
+    @media (min-width: #{bp.$screen-medium}px) {
+      &-subtitle,
+      &-title {
+        text-align: left;
+      }
+    }
+  }
+  
+  &__button {
+    display: block;
+    margin-top: auto;
+    padding-bottom: 6rem;
+    width: 100%;
+    
+    @media (min-width: #{bp.$screen-medium}px) {
+      padding-bottom: 0;
+      width: min-content;
+      margin-top: 4rem;
+    }
+  }
+}

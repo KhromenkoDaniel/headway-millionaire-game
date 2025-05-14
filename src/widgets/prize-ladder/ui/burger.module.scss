@@ -1,0 +1,32 @@
+.burger {
+  &__line {
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  
+  &__line--top {
+    transform: translateY(0) rotate(0);
+  }
+  
+  &__line--middle {
+    opacity: 1;
+  }
+  
+  &__line--bottom {
+    transform: translateY(0) rotate(0);
+  }
+  
+  &--open {
+    .burger__line--top {
+      transform: translateY(8px) rotate(45deg) translateX(-6px);
+    }
+    
+    .burger__line--middle {
+      opacity: 0;
+    }
+    
+    .burger__line--bottom {
+      transform: translateY(-9px) rotate(-45deg) translateX(-6px);
+    }
+  }
+}

@@ -27,7 +27,6 @@
   "plugins": [
     "@typescript-eslint",
     "react",
-    "react-hooks",
     "jsx-a11y",
     "import",
     "prettier"
@@ -37,8 +36,31 @@
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "react/prop-types": "off",
+    "react/require-default-props": "off",
     "import/prefer-default-export": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "no-restricted-exports": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.{js,ts,jsx,tsx}",
+          "**/*.spec.{js,ts,jsx,tsx}",
+          "**/test/**",
+          "**/tests/**",
+          "**/setupTests.ts"
+        ],
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state"]
+      }
+    ]
   },
   "settings": {
     "react": {
