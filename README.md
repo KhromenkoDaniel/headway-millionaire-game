@@ -9,6 +9,7 @@
 5. [Installation and Running the Project](#installation-and-running-the-project)
 6. [Features](#features)
 7. [Folder Structure](#folder-structure)
+8. [Git Flow](#git-flow)
 8. [JSON Configuration Example](#json-configuration-example)
 9. [Linting and Formatting](#linting-and-formatting)
 10. [License](#license)
@@ -85,6 +86,15 @@ To get started with the project, follow these steps:
 ## Folder Structure
 
 The project follows the FSD (Feature-Sliced Design) architecture, which organizes code by features and layers.
+
+## Git Flow
+
+This project follows a structured Git flow to manage development and releases:
+
+- **master**: This branch contains the production-ready code. All changes are merged here after thorough testing.
+- **develop**: This is the main development branch where features are integrated. It serves as an integration branch for features.
+- **feature/(folder)**: Feature branches are created from the develop branch. Each feature or bug fix should have its own branch, named according to the feature or issue being addressed.
+
 
 ## JSON Configuration Example
 
