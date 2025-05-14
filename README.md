@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💸 Who Wants to Be a Millionaire Quiz
 
-## Getting Started
+## 📚 Navigation
 
-First, run the development server:
+1. [Task](#task)
+2. [Requirements](#requirements)
+3. [Flexibility Considerations](#flexibility-considerations)
+4. [Technical Stack](#technical-stack)
+5. [Installation and Running the Project](#installation-and-running-the-project)
+6. [Features](#features)
+7. [Folder Structure](#folder-structure)
+8. [JSON Configuration Example](#json-configuration-example)
+9. [Linting and Formatting](#linting-and-formatting)
+10. [License](#license)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Task
+
+Implement the basic functionality of the "Who Wants to Be a Millionaire" game:
+
+- The player answers one of 12 questions in turn.
+- Each question has at least 4 answer options and at least one correct one.
+- If the answer is correct, the player moves to the next question. If the answer is incorrect, the player goes to the final screen.
+- The final screen should show the overall game result. The design for the layout is [provided](https://www.figma.com/file/tIZEZn2HTAeSDQRzoOzvXE/Front-end-test%2C-Headway). The layout should be adaptive.
+
+## Requirements
+
+- Use this [layout](https://www.figma.com/file/tIZEZn2HTAeSDQRzoOzvXE/Front-end-test%2C-Headway) for the layout.
+- Make the layout adaptive (from iPhone 8 to 4k displays).
+- Perform the layout without using CSS frameworks.
+- The game configuration (questions, answers, money for the correct answer, etc.) should be in JSON format.
+- The configuration should be extendable: more or fewer answer options for questions; several correct answers, etc.
+- Place the result on GitHub with md-instructions for installation and launch.
+- Complete the task using NextJs and deploy it on Vercel.
+- All client code must fully comply with the "out of the box" eslint / airbnb rules.
+- All client code should be fully typed using TypeScript.
+
+## Flexibility Considerations
+
+- Code that will be easy to expand and maintain.
+- Architectural organization of the application.
+- Correct handling of exceptional situations.
+
+## Technical Stack
+
+- **Framework**: Next.js
+- **Language**: TypeScript
+- **State Manager**: Redux Toolkit(thunk, reselect)
+- **Linting**: ESLint with Airbnb configuration
+- **Deployment**: Vercel
+- **Architecture**: FSD (Feature-Sliced Design)
+
+## Installation and Running the Project
+
+To get started with the project, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/KhromenkoDaniel/headway-millionaire-game.git
+   cd headway-millionaire-game
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser:**
+
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application in action.
+
+## Features
+
+- Interactive quiz game with 12 questions.
+- Adaptive design for various screen sizes.
+- JSON-based configuration for easy customization.
+
+## Folder Structure
+
+The project follows the FSD (Feature-Sliced Design) architecture, which organizes code by features and layers.
+
+## JSON Configuration Example
+
+```json
+[
+  {
+    "id": 1,
+    "question": "What is the capital of France?",
+    "answers": [
+      { "answer": "Berlin", "id": 1, "correct": false },
+      { "answer": "Madrid", "id": 2, "correct": false },
+      { "answer": "Paris", "id": 3, "correct": true },
+      { "answer": "Rome", "id": 4, "correct": false }
+    ],
+    "sum": 500
+  }
+]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Linting and Formatting
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- The project uses ESLint with Airbnb configuration to ensure code quality.
+- Run linting with:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+  ```bash
+  npm run lint
+  ```
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the MIT License.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
