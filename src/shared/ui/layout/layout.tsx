@@ -1,14 +1,16 @@
-import { ReactNode } from 'react';
+'use client';
+
+import { LayoutProps } from '@shared/types';
+import { store } from '@app/store';
+import { Provider } from 'react-redux';
 import styles from './layout.module.scss';
 
-export type LayoutProps = {
-  children: ReactNode;
-};
-
-export default function Layout({ children }: LayoutProps) {
+export default function BaseLayout({ children }: LayoutProps) {
   return (
-    <div className={styles.root}>
-      <main className={styles.main}>{children}</main>
-    </div>
+    <Provider store={store}>
+      <main className={styles.layout}>
+        <div className={styles.container}>{children}</div>
+      </main>
+    </Provider>
   );
 }

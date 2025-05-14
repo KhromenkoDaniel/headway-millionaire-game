@@ -77,6 +77,23 @@
   }
 }
 
+@mixin hover-active-state {
+  .hexagon > path {
+    stroke: var(--orange-120);
+  }
+  
+  .optionItem {
+    color: var(--orange-100);
+  }
+  
+  & > .hexagonContainer {
+    &::before,
+    &::after {
+      background: var(--orange-120);
+    }
+  }
+}
+
 @mixin disable-selection {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Safari */

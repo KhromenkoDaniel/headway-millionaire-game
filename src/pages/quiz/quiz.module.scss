@@ -1,0 +1,50 @@
+@use "@/shared/_mixins.scss" as mix;
+@use "@shared/_breakpoints" as bp;
+
+.quiz {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  width: 100vw;
+  
+  @media (min-width: #{bp.$screen-medium}px) {
+    justify-content: space-between;
+    padding: 8.3125rem 5rem;
+    width: auto;
+  }
+  
+  &__title {
+    @include mix.text-question;
+    color: var(--black-100);
+    margin: auto 0;
+    text-align: center;
+    
+    @media (min-width: #{bp.$screen-medium}px) {
+      margin: 0;
+      text-align: left;
+    }
+  }
+  
+  &__answers {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+    @media (min-width: #{bp.$screen-medium}px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem 0;
+      max-width: 52.75rem;
+    }
+    
+    @include mix.respond-to(bp.$screen-small) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem 0;
+      margin-bottom: 40px;
+    }
+  }
+}

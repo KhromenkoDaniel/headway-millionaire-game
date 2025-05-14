@@ -1,1 +1,1 @@
-export { default as Layout, type LayoutProps } from './layout';
+export { default as BaseLayout } from './layout';
