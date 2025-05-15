@@ -35,7 +35,7 @@ Implement the basic functionality of the "Who Wants to Be a Millionaire" game:
 - All client code must fully comply with the "out of the box" eslint / airbnb rules.
 - All client code should be fully typed using TypeScript.
 
-## Flexibility Considerations
+### Flexibility Considerations
 
 - Code that will be easy to expand and maintain.
 - Architectural organization of the application.
@@ -43,10 +43,13 @@ Implement the basic functionality of the "Who Wants to Be a Millionaire" game:
 
 ## Technical Stack
 
-- **Framework**: Next.js
+- **Framework**: Next.js (App Router)
 - **Language**: TypeScript
-- **State Manager**: Redux Toolkit(thunk, reselect)
-- **Linting**: ESLint with Airbnb configuration
+- **State Management**: Redux Toolkit (with Thunks & Reselect)
+- **Styling**: SCSS Modules · clsx · BEM methodology
+- **Linting & Formatting**: ESLint (Airbnb config) · Prettier
+- **Testing**: Jest · React Testing Library
+- **Automation**: Husky Git hooks (pre-commit, pre-push)
 - **Deployment**: Vercel
 - **Architecture**: FSD (Feature-Sliced Design)
 
@@ -116,8 +119,11 @@ This project follows a structured Git flow to manage development and releases:
 
 ## Linting and Formatting
 
-- The project uses ESLint with Airbnb configuration to ensure code quality.
-- Run linting with:
+- The project uses **ESLint** with the **Airbnb configuration** to enforce code quality.
+- **Prettier** is used for automatic code formatting.
+- **Husky** runs linting and formatting checks on pre-commit to ensure consistency.
+
+### Run linting with:
 
   ```bash
   npm run lint
